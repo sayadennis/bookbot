@@ -41,7 +41,20 @@
         response = "I'm just a simple Bookbot! Ask me something else.";
       }
       
-      responseBox.textContent = response;
+      // Clear any existing response
+      // responseBox.textContent = response; /* old */
+      responseBox.textContent = "";
+      
+      // Typing effect function
+      let index = 0;
+      function typeText() {
+        if (index < response.length) {
+          responseBox.textContent += response[index];
+          index++;
+          setTimeout(typeText, 50); // Adjust speed (in ms) if needed
+        }
+      }
+      typeText(); // Start typing effect
     });
   </script>
 </body>
