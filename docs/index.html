@@ -10,8 +10,9 @@
     #question {
       width: 100%; /* Adjust to full width */
       max-width: 600px; /* Optional: Limit width for readability */
-      height: 3rem; /* Adjust height to fit more text */
+      height: 6rem; /* Adjust height for multiple lines */
       font-size: 1rem; /* Improve readability for longer input */
+      resize: vertical; /* Allow user to resize vertically */
     }
   </style>
 </head>
@@ -19,7 +20,7 @@
   <h1>Ask the Bookbot 📚</h1>
   <form id="chatForm">
     <label for="question">Your Question:</label><br>
-    <input type="text" id="question" name="question" required><br><br>
+    <textarea id="question" name="question" required></textarea><br><br>
     <button type="submit">Ask</button>
   </form>
   <div id="response"></div>
