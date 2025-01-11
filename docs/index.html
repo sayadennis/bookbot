@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sandbox Bookbot</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    #response { margin-top: 20px; font-style: italic; }
+  </style>
+</head>
+<body>
+  <h1>Ask the Bookbot</h1>
+  <form id="chatForm">
+    <label for="question">Your Question:</label><br>
+    <input type="text" id="question" name="question" required><br><br>
+    <button type="submit">Ask</button>
+  </form>
+  <div id="response"></div>
+
+  <script>
+    document.getElementById('chatForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const question = document.getElementById('question').value;
+      const responseBox = document.getElementById('response');
+      
+      // Simple hardcoded responses for demo
+      let response;
+      if (question.toLowerCase().includes('hello')) {
+        response = "Hi there! How can I help?";
+      } else if (question.toLowerCase().includes('book')) {
+        response = "I like books too!";
+      } else {
+        response = "I'm just a simple Bookbot! Ask me something else.";
+      }
+      
+      responseBox.textContent = response;
+    });
+  </script>
+</body>
+</html>
+
